@@ -1,4 +1,4 @@
-int longestConsecutive(vector<int>& nums)
+int longestConsecutive(vector<int>& nums)//O(n) Time complexity
     {
      int n=nums.size();
      if(n==0)return 0;
