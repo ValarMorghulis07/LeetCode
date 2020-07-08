@@ -14,7 +14,7 @@ public:
       else
           return bs(nums,mid+1,hi,x);
      }
-     else //nums[mid...h] is sorted
+     else //nums[mid+1...h] is sorted
      {
       if(x>=nums[mid] && x<=nums[hi])
           return bs(nums,mid+1,hi,x);
