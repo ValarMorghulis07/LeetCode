@@ -19,3 +19,5 @@ public:
       }
     }
 };
+
+// In anticlockwise first transpose the matrix ,then reverse each column and in clockwise after transpose reverse each row
