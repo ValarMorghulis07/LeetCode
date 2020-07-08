@@ -1,6 +1,6 @@
 class Solution {
 public:
-
+    
     vector<string>ans;
     bool IsValid(string temp)
     {
@@ -16,7 +16,7 @@ public:
      }
      return (cnt==0);
     }
-
+    
     void doit(string str)
     {
      if(!str.length())
@@ -36,7 +36,7 @@ public:
         ans.push_back(temp);
         level=true;
       }
-      // b'coz u have to remove minimum no. of characters so if one found check for that level only
+      // b'coz u have to remove minimum no. of characters so if one found check for that level only 
        if(level)
            continue;
        for(int i=0;i<temp.length();i++)
@@ -50,18 +50,21 @@ public:
          q.push(temp1);
         }
        }
-
+       
      }
     }
-
-    vector<string> removeInvalidParentheses(string s)
+    
+    vector<string> removeInvalidParentheses(string s) 
     {
     ans.clear();
      if(s.length()==0)
      {
-      return vector<string>({""});
+      ans.push_back("");
+      return ans;
      }
      doit(s);
      return ans;
     }
 };
+
+// o(2^n) time complexity
