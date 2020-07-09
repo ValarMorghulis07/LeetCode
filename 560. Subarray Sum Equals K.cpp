@@ -10,7 +10,7 @@ public:
         cur+=nums[i];
         if(cur==k)
             res++;
-        if(mp.find(cur-k)!=mp.end())
+        if(mp.find(cur-k)!=mp.end())// if cur sum exceeds k value ,so we check by eliminating k from cur
             res+=mp[cur-k];
         mp[cur]++;
       }
