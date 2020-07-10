@@ -4,7 +4,9 @@ public:
     {
      if(m==1 || n==1)
          return 1;
-     return doit(m-1,n)+doit(m,n-1)//+doit(m-1,n-1) if diagonal movements are allowed;
+     return doit(m-1,n)+doit(m,n-1)
+     
+     //+doit(m-1,n-1) if diagonal movements are allowed;
     }*/
     int uniquePaths(int m, int n)
     {
