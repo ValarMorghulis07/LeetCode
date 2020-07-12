@@ -71,10 +71,12 @@ int main()
    cin>>a[i];
   if(n<4)
     cout<<"-1"<<"\n";
-  else
-  {
   sort(a,a+n);
   doit(a,n,tar);
+  if(ss.size()==0)
+    cout<<"-1"<<"\n";
+  else
+  {
   for(auto xx:ss)
   {
    for(auto yy:xx)
