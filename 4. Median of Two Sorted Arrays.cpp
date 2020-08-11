@@ -50,10 +50,10 @@ double doit(vector<int>&a, vector<int>&b)//O(min(logm,logn))
      {
       int partx=l+(r-l)/2;
       int party=(m+n+1)/2-partx;
-      int maxlx=(partx==0)?INT_MIN:a[partx-1];
-      int minrx=(partx==m)?INT_MAX:a[partx];
-      int maxly=(party==0)?INT_MIN:b[party-1];
-      int minry=(party==n)?INT_MAX:b[party];
+      int maxlx=(partx==0)?INT_MIN:a[partx-1]; // when left of x becomes empty
+      int minrx=(partx==m)?INT_MAX:a[partx]; // when right of x becomes empty
+      int maxly=(party==0)?INT_MIN:b[party-1]; // // when left of y becomes empty
+      int minry=(party==n)?INT_MAX:b[party]; // // when right of y becomes empty
       if(maxlx<=minry && maxly<=minrx)
       {
        if((m+n)%2==0)
