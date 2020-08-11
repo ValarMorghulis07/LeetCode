@@ -8,7 +8,7 @@ int findDuplicate(vector<int>& nums)
       fast=nums[nums[fast]];
      }while(slow!=fast);
      slow=nums[0];
-     while(slow!=fast)
+     while(slow!=fast) // wanna know cycle entrance point
      {
       slow=nums[slow];
       fast=nums[fast];
