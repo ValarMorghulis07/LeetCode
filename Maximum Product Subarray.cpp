@@ -51,7 +51,7 @@ int numSubarrayProductLessThanK(vector<int>& nums, int k)
      while(j<n)
      {
       zz*=nums[j];
-      while(start<j && zz>=k)
+      while(start<j && zz>=k)// start<j b'coz if arr is [100,100,100] and k=10
       {
        zz/=nums[start];
        start++;
