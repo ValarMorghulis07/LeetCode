@@ -134,6 +134,48 @@ public:
     }
 };
 
+// 416. Partition Equal Subset Sum
+
+class Solution {
+public:
+    bool canPartition(vector<int>& nums)
+    {
+     int n=nums.size();
+     if(n==0)
+         return 1;
+     if(n==1)
+         return 0;
+     int sum=0;
+     for(int i=0;i<n;i++)
+         sum+=nums[i];
+     if(sum & 1)
+         return 0;
+     else
+     {
+      int tar=sum/2;
+      bool dp[n+1][tar+1];
+      for(int i=0;i<=n;i++)
+          dp[i][0]=1;
+      for(int i=1;i<=tar;i++)
+          dp[0][i]=0;
+      for(int i=1;i<=n;i++)
+      {
+       for(int j=1;j<=tar;j++)
+       {
+         if(j<nums[i-1])
+             dp[i][j]=dp[i-1][j];
+         else
+             dp[i][j]=dp[i-1][j] || dp[i-1][j-nums[i-1]];
+             
+       }
+      }
+         return dp[n][tar];
+     }
+          
+     }
+     
+};
+
 // Count pairs with given sum(gfg)
 
 #include <bits/stdc++.h>
