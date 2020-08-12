@@ -116,3 +116,52 @@ public:
      return findit(nums,n);
     }
 };
+ // Repeat and Missing Number Array
+
+#define bits<std/c++.h>
+#define m_p(x,y) make_pair(x,y)
+#define rep(i,a,b) for(ll i=a;i<b;i++)
+#define repush_back(i,a,b) for(ll i=a;i>=b;i--)
+#define f(n) for(ll i=0;i<n;i++)
+#define r(n) for(ll j=0;j<n;j++)
+#define F first
+#define S second
+#define pi 3.14159265359
+#define hs ios_base::sync_with_stdio(false);cin.tie(NULL);
+using namespace std;
+typedef  long long int ll;
+ll HRX=1e18;
+ll INF=1e9+7;
+
+int main()
+{
+ hs;
+ ll t;
+ cin>>t;
+ f(t)
+ {
+  ll s1=0,s2=0;
+  ll n;
+  cin>>n;
+  ll a[n];
+  f(n)
+  {
+   cin>>a[i];
+   s1+=a[i];
+   s2+=(a[i]*a[i]);
+  }
+  ll aa=n*(n+1);
+  aa=aa*((2*n)+1);
+  aa=aa/6;
+  aa=aa-s2;
+  ll bb=(n)*(n+1);
+  bb=bb/2;
+  bb=bb-s1;
+  ll xx=(aa/bb)+bb;
+  xx=xx/2;
+  ll yy=xx-bb;
+  cout<<yy<<" "<<xx<<endl;
+ }
+ return 0;
+}
+
