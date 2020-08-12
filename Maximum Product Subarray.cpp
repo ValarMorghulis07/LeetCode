@@ -23,6 +23,9 @@ public:
 
 // 152. Maximum Product Subarray
 
+// Given an integer array nums, find the contiguous subarray within an array (containing at least one number) which has the largest product.
+
+
 int maxProduct(vector<int>& nums)
     {
      int n=nums.size();
