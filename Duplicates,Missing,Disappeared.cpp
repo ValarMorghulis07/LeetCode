@@ -133,7 +133,12 @@ typedef  long long int ll;
 ll HRX=1e18;
 ll INF=1e9+7;
 
-int main()
+/*
+s1=(n*(n+1)/2)-xx+yy;
+s2=(n*(n+1)(2*n+1))/6-xx^2+yy^2
+where, xx=missing ,yy=repeating
+*/
+int main() 
 {
  hs;
  ll t;
