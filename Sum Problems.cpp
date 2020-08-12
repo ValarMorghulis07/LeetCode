@@ -225,6 +225,8 @@ int main()
 
 // Find all pairs with a given sum
 
+// Given two unsorted arrays A of size N and B of size M of distinct elements, the task is to find all pairs from both arrays whose sum is equal to X.
+
 #include <bits/stdc++.h>
 #define mem(dp,a) memset(dp,a,sizeof(dp))
 #define pb(x) push_back(x)
