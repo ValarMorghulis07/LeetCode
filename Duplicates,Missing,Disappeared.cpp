@@ -89,12 +89,12 @@ public:
      {
       if(nums[i]<=0)
       {
-       swap(nums[i],nums[j]);
+       swap(nums[i],nums[j]);// all 0 && -ve numbers on left side of array
        j++;
       }
      }
      n=n-j;
-     rotate(nums.begin(),nums.begin()+j,nums.end());
+     rotate(nums.begin(),nums.begin()+j,nums.end()); // if some a[] is {1,2,3,4} and j=1 then after rotation a[] becomes={2,3,4,4} i.e:-rotate left by j times
      for(int i=0;i<n;i++)
      {
       if(abs(nums[i])-1<n && nums[abs(nums[i])-1]>0)
