@@ -1,5 +1,9 @@
 // 1. Two Sum
 
+// Given an array of integers, return indices of the two numbers such that they add up to a specific target. if(nums[3,3] && tar=6,then it is possible)
+
+
+
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target)
