@@ -41,3 +41,40 @@ public:
       return ans;
     }
 };
+
+// 31. Next Permutation
+
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) 
+    {
+     int n=nums.size();
+     int idx=-1,i=n-2;
+     for(i=n-2;i>=0;i--)
+     {
+      if(nums[i]<nums[i+1])
+      {
+       idx=i;
+       break;
+      }
+     }
+     if(i==-1)
+         reverse(nums.begin(),nums.end());
+     else
+     {
+     int minn=INT_MAX,idx1;
+     for(int i=idx+1;i<n;i++)
+     {
+      if(nums[i]>nums[idx] && nums[i]<minn)
+      {
+       minn=nums[i];
+       idx1=i;
+      }
+     }
+      swap(nums[idx],nums[idx1]);
+      sort(nums.begin()+idx+1,nums.end());
+     }
+     
+     
+    }
+};
