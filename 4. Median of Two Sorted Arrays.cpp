@@ -50,7 +50,7 @@ double doit(vector<int>&a, vector<int>&b)//O(min(logm,logn))
      int m=a.size();
      int n=b.size();
      if(m>n)
-        return doit(b,a);
+        return doit(b,a);// binary seach on small size array
      int l=0,r=m;
      while(l<=r)
      {
