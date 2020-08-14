@@ -40,6 +40,39 @@ public:
     }
 };
 
+// 80. Remove Duplicates from Sorted Array II
+
+// Given a sorted array nums, remove the duplicates in-place such that duplicates appeared at most twice and return the new length.
+
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums)
+    {
+      int n=nums.size();
+      if(n==0)
+          return 0;
+      int idx=1;
+      bool ff=0;
+     for(int i=1;i<n;i++)
+     {
+      if(nums[i]!=nums[i-1])
+      {
+       nums[idx]=nums[i];
+       idx++;
+       ff=0;
+      }
+      else if(nums[i]==nums[i-1] && !ff)
+      {
+       nums[idx]=nums[i];
+       idx++;
+       ff=1;
+      }
+     }
+     return idx;
+        
+    }
+};
+
 // 448. Find All Numbers Disappeared in an Array
 
 vector<int> findDisappearedNumbers(vector<int>& nums)
