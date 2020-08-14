@@ -84,93 +84,45 @@ double doit(vector<int>&a, vector<int>&b)//O(min(logm,logn))
 
 // 295. Find Median from Data Stream
 
-#include<bits/stdc++.h>
-#define mem(dp,a) memset(dp,a,sizeof(dp))
-#define pb(x) push_back(x)
-#define m_p(x,y) make_pair(x,y)
-#define rep(i,a,b) for(ll i=a;i<b;i++)
-#define repush_back(i,a,b) for(ll i=a;i>=b;i--)
-#define f(n) for(ll i=0;i<n;i++)
-#define r(n) for(ll j=0;j<n;j++)
-#define F first
-#define S second
-#define pi 3.14159265359
-#define hs ios_base::sync_with_stdio(false);cin.tie(NULL);
-using namespace std;
-typedef  long long int ll;
-ll HRX=1e18;
-ll INF=1e9+7;
+class MedianFinder {
+public:
+    /** initialize your data structure here. */
+    priority_queue<int>maxx;
+    priority_queue<int,vector<int>,greater<int>>minn;
+    MedianFinder() 
+    {
+        
+    }
+    
+    void addNum(int num)
+    {
+      if(maxx.empty() || maxx.top()>num)
+          maxx.push(num);
+      else
+          minn.push(num);
+     
+      // balancing
+      if(maxx.size()>minn.size()+1)
+      {
+       minn.push(maxx.top());
+       maxx.pop();
+      }
+      
+      if(minn.size()>maxx.size()+1)
+      {
+       maxx.push(minn.top());
+       minn.pop();
+      }
+    }
+    
+    double findMedian() 
+    {
+     if(maxx.size()==minn.size())
+         return (maxx.top()+minn.top())*0.5;
+     else if(maxx.size()>minn.size())
+         return maxx.top();
+     else
+         return minn.top();
+    }
+};
 
-void median(double a[],ll n)
-{
- priority_queue<double>maxx;
- priority_queue<double,vector<double>,greater<double>>minn;
- double med=a[0];
- maxx.push(a[0]);
- cout<<med<<" ";
- for(ll i=1;i<n;i++)
- {
-  double x=a[i];
-  if(maxx.size()>minn.size())
-  {
-   if(x<med)
-   {
-    minn.push(maxx.top());
-    maxx.pop();
-    maxx.push(x);
-   }
-   else
-   {
-    minn.push(x);
-   }
-   med=(maxx.top()+minn.top())/2.0;
-  }
-  else if(maxx.size()==minn.size())
-  {
-    if(x<med)
-    {
-     maxx.push(x);
-     med=double(maxx.top());
-    }
-    else
-    {
-     minn.push(x);
-     med=double(minn.top());
-    }
-  }
-  else
-  {
-    if(x>med)
-    {
-     maxx.push(minn.top());
-     minn.pop();
-     minn.push(x);
-    }
-    else
-    {
-     maxx.push(x);
-    }
-    med=(maxx.top()+minn.top())/2.0;
-  }
-  cout<<med<<" ";
- }
-
-}
-int main()
-{
- hs;
- ll t;
- cin>>t;
- f(t)
- {
-  ll n;
-  cin>>n;
-  double a[n];
-  f(n)
-  {
-   cin>>a[i];
-  }
-  median(a,n);
- }
- return 0;
-}
