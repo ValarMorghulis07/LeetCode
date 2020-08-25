@@ -28,6 +28,8 @@ public:
 
 // 63. Unique Paths II
 
+// An obstacle and empty space is marked as 1 and 0 respectively in the grid.
+
 class Solution {
 public:
     int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) 
