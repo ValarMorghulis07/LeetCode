@@ -1,3 +1,5 @@
+// 498. Diagonal Traverse
+
 class Solution {
 public:
     vector<int> findDiagonalOrder(vector<vector<int>>& matrix) 
@@ -40,6 +42,37 @@ public:
      }
      return ans;
         
+     
+    }
+};
+
+// 1424. Diagonal Traverse II
+
+class Solution {
+public:
+    vector<int> findDiagonalOrder(vector<vector<int>>& nums) 
+    {
+     int n=nums.size();
+     if(n==0)
+         return {};
+     map<int,vector<int>>mp;
+     vector<int>ans;
+     for(int i=0;i<n;i++)
+     {
+      for(int j=0;j<nums[i].size();j++)
+      {
+       mp[i+j].push_back(nums[i][j]);
+      }
+     }
+     for(auto xx:mp)
+     {
+      for(int i=xx.second.size()-1;i>=0;i--)
+      {
+       ans.push_back(xx.second[i]);
+      }
+     }
+     return ans;
+     
      
     }
 };
