@@ -120,6 +120,40 @@ public:
     }
 };
 
+// 454. 4Sum II
+
+// Given four lists A, B, C, D of integer values, compute how many tuples (i, j, k, l) there are such that A[i] + B[j] + C[k] + D[l] is zero.
+
+class Solution {
+public:
+    int fourSumCount(vector<int>& A, vector<int>& B, vector<int>& C, vector<int>& D) 
+    {
+     int n=A.size();
+     if(n==0)
+         return 0;
+     unordered_map<int,int>mp;
+     for(int i=0;i<n;i++)
+     {
+      for(int j=0;j<n;j++)
+      {
+       mp[A[i]+B[j]]++;
+      }
+     }
+     int cnt=0;
+     for(int i=0;i<n;i++)
+     {
+      for(int j=0;j<n;j++)
+      {
+       if(mp.find(0-C[i]-D[j])!=mp.end())
+           cnt+=mp[-C[i]-D[j]];
+      }
+     }
+     return cnt;
+     
+     
+    }
+};
+
 // 560. Subarray Sum Equals K
 
 class Solution {
