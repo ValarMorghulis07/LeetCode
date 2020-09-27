@@ -104,7 +104,6 @@ public:
          vv.push_back(nums[j]);
          vv.push_back(nums[lo]);
          vv.push_back(nums[hi]);
-         sort(vv.begin(),vv.end());
          ss.insert(vv);
          lo++;hi--;
         }
