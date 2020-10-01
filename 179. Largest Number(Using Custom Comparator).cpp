@@ -13,7 +13,7 @@ public:
      for(auto xx:vv)
          ans+=xx;
     
-     while(ans[0]=='0' && ans.size()>1)
+     while(ans[0]=='0' && ans.size()>1) // basically in this case all numbers are 0 so u can also return "0" from here.
          ans.erase(0,1);
      return ans;
      
