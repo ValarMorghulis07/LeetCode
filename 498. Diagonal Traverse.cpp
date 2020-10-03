@@ -91,7 +91,7 @@ public:
      if(m==0)
          return {};
      int n=matrix[0].size();
-      vector<int>ans(m*n);
+     vector<int>ans(m*n);
      int i=0,j=0,idx=0;
      while(i<m && j<n)
      {
