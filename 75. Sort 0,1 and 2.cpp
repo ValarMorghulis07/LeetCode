@@ -36,3 +36,12 @@ public:
 
     }
 };
+
+/* --> Not confirm:
+ [0,lo-1]=0;
+ [lo,hi]=1;
+ [hi+1,n-1]=2;
+ ALL INCLUSIVE
+ */
+ 
+
