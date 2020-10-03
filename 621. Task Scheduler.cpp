@@ -23,10 +23,5 @@ public:
      }
      int ans=max(zz,(maxx-1)*(n+1)+cnt);
      return ans;
-
-
-
-
-
     }
 };
