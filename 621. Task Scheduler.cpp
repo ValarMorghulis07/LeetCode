@@ -8,7 +8,7 @@ public:
          return zz;
      if(zz==0 || zz==1)
          return zz;
-     map<char,int>mp;
+     unordered_map<char,int>mp;
      int maxx=-1;
      for(int i=0;i<tasks.size();i++)
      {
