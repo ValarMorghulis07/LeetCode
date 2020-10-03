@@ -19,7 +19,7 @@ public:
       i--;
       j--;
      }
-     if(n>1 && vv[n-2]==vv[n-1]) // [1,2,3,5,5],(vv[n-1]==vv[n-2] is basically nums[n/2]==nums[1+n/2] after sorting nums)
+     if(n>1 && vv[n-2]==vv[n-1]) // [1,2,3,3,5],(vv[n-1]==vv[n-2] is basically nums[n/2]==nums[1+n/2] after sorting nums)
      {
       for(int i=2;i<n-1;i++)
       {
