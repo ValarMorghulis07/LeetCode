@@ -1,3 +1,5 @@
+// 42. Trapping Rain Water
+
 class Solution {
 public:
     int trap(vector<int>& height)
@@ -20,5 +22,26 @@ public:
            sum+=(zz-height[i]);
       }
       return sum;
+    }
+};
+
+// 11. Container With Most Water
+
+class Solution {
+public:
+    int maxArea(vector<int>& height) 
+    {
+     int n=height.size();
+     int area=0,l=0,r=n-1;
+     while(l<r)
+     {
+      area=max(area,min(height[l],height[r])*(r-l));
+      if(height[l]<height[r])
+          l++;
+      else
+          r--;
+     }
+        return area;
+    
     }
 };
