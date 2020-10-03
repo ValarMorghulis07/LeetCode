@@ -11,7 +11,7 @@ vector<int> findAnagrams(string s, string p)
       {
        vec2[s[i]-'a']++;
        if(i>=n2)vec2[s[i-n2]-'a']--;
-       if(vec1==vec2)ans.push_back(i-n2+1);
+       if(vec1==vec2)ans.push_back(i+1-n2);
       }
         return ans;
     }
