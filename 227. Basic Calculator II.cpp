@@ -1,3 +1,5 @@
+// --> first do division and multiplication work then simply add all contents of stack
+
 class Solution {
 public:
     int calculate(string s)
@@ -8,7 +10,7 @@ public:
      for(int i=0;i<s.size();i++)
      {
       if(isdigit(s[i]))
-          temp=10*temp+int(s[i]-'0');
+          temp=10*temp+int(s[i]-'0'); // if string is 42;
       if((!isspace(s[i]) && !isdigit(s[i])) || i==s.length()-1)
       {
        if(lastsign=='+')
