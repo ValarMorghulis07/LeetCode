@@ -1,3 +1,5 @@
+// --> first solution:- Sort the array and find in n*log(n)
+
 int longestConsecutive(vector<int>& nums)//O(n) Time complexity
     {
      int n=nums.size();
