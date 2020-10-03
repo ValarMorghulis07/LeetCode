@@ -48,7 +48,7 @@ public:
         slow=go(slow);
         fast=go(fast);
         fast=go(fast);
-     }while(slow!=fast);
+     }while(slow!=fast); // --> they will surely meet but it doesn't mean the cycle which will be formed will be on 1 only it may on other number also, so we check below if(slow==1),then true. 
 
     if(slow==1)
         return 1;
