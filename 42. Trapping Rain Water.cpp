@@ -15,7 +15,7 @@ public:
       for(int i=n-2;i>=0;i--)
           suff[i]=max(suff[i+1],height[i]);
       int sum=0;
-      for(int i=0;i<n;i++)
+      for(int i=0;i<n;i++) // [3,0,2,0,4]
       {
        int zz=min(pre[i],suff[i]);
        if(zz>=height[i])
