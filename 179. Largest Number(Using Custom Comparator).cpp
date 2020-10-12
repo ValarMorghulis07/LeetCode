@@ -1,3 +1,5 @@
+-// --> 1st mehod
+
 class Solution {
 public:
    
@@ -21,3 +23,33 @@ public:
      
     }
 };
+
+// -->2nd method
+
+class Solution {
+public:
+   
+   static bool compare(string& s1,string& s2)
+   {
+     return (s1+s2>s2+s1);
+   }
+   
+    string largestNumber(vector<int>& nums) 
+    {
+     int n=nums.size();
+     vector<string>vv;
+     for(int i=0;i<n;i++)
+         vv.push_back(to_string(nums[i]));
+     sort(vv.begin(),vv.end(),compare);
+     string ans="";
+     for(auto xx:vv)
+         ans+=xx;
+     if(ans[0]=='0')
+         return "0";
+     return ans;
+     
+     
+    }
+};
+
+
