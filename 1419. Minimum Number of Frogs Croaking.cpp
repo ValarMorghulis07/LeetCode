@@ -14,7 +14,7 @@ public:
     {
      int n=croakOfFrogs.length();
      int maxx=0,frogs=0;
-     int cnt[5];
+     int cnt[5]={0};
      string str="croak";
      for(int i=0;i<n;i++)
      {
