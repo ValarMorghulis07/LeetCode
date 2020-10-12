@@ -26,7 +26,7 @@ public:
 class Solution {
 public:
    
-   static bool compare(string& s1,string& s2)
+   static bool compare(string& s1,string& s2) //--> b'coz it's not an instance member function
    {
      return (s1+s2>s2+s1);
    }
