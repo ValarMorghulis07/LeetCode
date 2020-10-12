@@ -18,9 +18,6 @@ public:
      while(ans[0]=='0' && ans.size()>1) // basically in this case all numbers are 0 so u can also return "0" from here.
          ans.erase(0,1);
      return ans;
-     
-     
-     
     }
 };
 
@@ -47,8 +44,6 @@ public:
      if(ans[0]=='0')
          return "0";
      return ans;
-     
-     
     }
 };
 
