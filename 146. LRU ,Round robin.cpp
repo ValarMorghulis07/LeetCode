@@ -8,7 +8,7 @@ public:
     
     void doit(int key)
     {
-     if(pos.find(key)!=pos.end())
+     if(pos.find(key)!=pos.end()) //--> for searching
          recent.erase(pos[key]);
      else if(recent.size()>=sz)
      {
