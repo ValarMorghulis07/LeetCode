@@ -1,3 +1,5 @@
+// 239. Sliding Window Maximum
+
 class Solution {
 public:
     vector<int> maxSlidingWindow(vector<int>& nums, int k)
@@ -40,5 +42,49 @@ public:
       }
        ans.push_back(nums[dq.front()]);
         return ans;
+    }
+};
+
+// 76. Minimum Window Substring
+
+class Solution {
+public:
+    string minWindow(string s, string t) 
+    {
+     string ans="";
+     int m=s.length();
+     int n=t.length();
+     if(n>m)
+        return ans;
+     map<char,int>mp1,mp2;
+     for(int i=0;i<n;i++)
+         mp2[t[i]]++;
+     int cnt=0,start=0,index=-1,minlen=INT_MAX;
+     for(int i=0;i<m;i++)
+     {
+      mp1[s[i]]++;
+      if(mp2[s[i]]!=0 && mp2[s[i]]>=mp1[s[i]])
+          cnt++;
+      if(cnt==n)
+      {
+       while(mp1[s[start]]>mp2[s[start]])
+       {
+        if(mp1[s[start]]>mp2[s[start]])
+             mp1[s[start]]--;
+         start++;
+       }
+         
+       int win_len=i-start+1;
+       if(minlen>win_len)
+       {
+        minlen=win_len;
+        index=start;
+       }
+      }
+     }
+     if(index==-1)
+         return ans;
+     else
+         return s.substr(index,minlen);
     }
 };
