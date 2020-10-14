@@ -139,6 +139,9 @@ int main()
 
 // Page Faults in LRU
 
+
+//newly rerfreshed/inserted element will be at back and element to be deleted will be at front
+
 #include <bits/stdc++.h>
 #define mem(dp,a) memset(dp,a,sizeof(dp))
 #define pb(x) push_back(x)
