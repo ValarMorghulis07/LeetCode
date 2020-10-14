@@ -1,3 +1,26 @@
+// 867. Transpose Matrix
+
+class Solution {
+public:
+    vector<vector<int>> transpose(vector<vector<int>>& A) 
+    {
+     int m=A.size();
+     if(m==0)
+         return A;
+     int n=A[0].size();
+     vector<vector<int>>ans(n,vector<int>(m));// b'coz grid may be rectangle
+     for(int i=0;i<m;i++)
+     {
+      for(int j=0;j<n;j++)
+      {
+       ans[j][i]=A[i][j];
+      }
+     }
+     return ans;
+    
+    }
+};
+
 // 48. Rotate Image
 
 class Solution {
@@ -9,7 +32,7 @@ public:
       {
        for(int j=0;j<i;j++)
        {
-         swap(matrix[i][j],matrix[j][i]);
+         swap(matrix[i][j],matrix[j][i]); //--> This works only for square matrix
        }
       }
       for(int i=0;i<n;i++)
