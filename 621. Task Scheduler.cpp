@@ -21,7 +21,7 @@ public:
       if(xx.second==maxx)
           cnt++;
      }
-     int ans=max(zz,(maxx-1)*(n+1)+cnt);
+     int ans=max(zz,(maxx-1)*(n+1)+cnt); // (n+1--> either u keep idle or other tasks)->aaaaabbbcc
      return ans;
     }
 };
