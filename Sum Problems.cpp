@@ -368,7 +368,7 @@ ll INF=1e9+7;
  }
  cout<<maxx<<endl;
 }*/
-void zero1(ll a[],ll n)//o(n)
+void zero1(ll a[],ll n)//o(n) -i.e-->arr[] = {15, -2, 2, -8, 1, 7, 10, 23}
 {
  map<ll,ll>mp;
  ll sum=0,maxx=0;
