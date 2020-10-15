@@ -44,6 +44,12 @@ public:
 };
 
 /////////////
+/*
+a[]={1,3,8,9,15};
+b[]={7,11,18,19,21,25}
+so first partition in a will be after 3 & in b will be after 19(-i.e--> in case of total odd elements one element will be more in left side)
+*/
+ 
 
 double doit(vector<int>&a, vector<int>&b)//O(min(logm,logn))
     {
