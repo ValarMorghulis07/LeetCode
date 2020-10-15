@@ -73,7 +73,6 @@ public:
              mp1[s[start]]--;
          start++;
        }
-         
        int win_len=i-start+1;
        if(minlen>win_len)
        {
