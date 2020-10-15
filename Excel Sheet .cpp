@@ -28,12 +28,12 @@ public:
       while(n)
       {
        int rem=n%26;
-       if(rem==0)
+       if(rem==0) //AZ
        {
         str+='Z';
         n=(n/26)-1;
        }
-       else
+       else // AB
        {
         str+=(rem-1)+'A';
         n/=26;
