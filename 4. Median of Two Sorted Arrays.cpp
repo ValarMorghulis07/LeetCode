@@ -47,10 +47,9 @@ public:
 
 double doit(vector<int>&a, vector<int>&b)//O(min(logm,logn))
     {
-     int m=a.size();
-     int n=b.size();
-     if(m>n)
+     if(a.size()>b.size())
         return doit(b,a);// binary seach on small size array
+     int m=a.size();
      int l=0,r=m;
      while(l<=r)
      {
