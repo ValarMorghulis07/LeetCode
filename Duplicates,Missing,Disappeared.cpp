@@ -164,7 +164,7 @@ public:
      return findit(nums,n);
     }
 };
- // Repeat and Missing Number Array
+ // Repeat and Missing Number Array--> Given an unsorted array of size n. Array elements are in the range from 1 to n. One number from set {1, 2, …n} is missing and one number occurs twice in the array. 
 
 #define bits<std/c++.h>
 #define m_p(x,y) make_pair(x,y)
