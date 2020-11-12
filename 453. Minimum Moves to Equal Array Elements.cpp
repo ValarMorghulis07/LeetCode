@@ -74,3 +74,38 @@ public:
       return ans;
     }
 };
+
+// 2nd solution--->
+
+/*
+Same idea as solution 1 above.
+But instead of assign value one by one,
+we count the input numbers first, and assign values to all same value at one time.
+
+This solution has only O(N) time for cases like [1,1,1,1,1,1,.....]
+
+Time Complexity:
+O(NlogK) using TreeMap in C++/Java
+Space: O(K) for in-space sort
+*/
+
+class Solution {
+public:
+    int minIncrementForUnique(vector<int>& A)
+    {
+      int n=A.size();
+      if(n==1)
+          return 0;
+      map<int,int>mp;
+      for(int i=0;i<n;i++)
+          mp[A[i]]++;
+      int next=0,ans=0;
+      for(auto xx:mp)
+      {
+       ans+=max(0,next-xx.first)*xx.second + (xx.second*(xx.second-1))/2; // firstly all numbers reach to next value (from max(0,need-xx.first)*xx.second this) then if all are same then they will becpme different by ((xx.second*(xx.second-1))/2 this expression) [1,1,1,1,2,2,2,2]
+       next=max(next,xx.first)+xx.second; // fixing next element to be
+      }
+      return ans;
+    }
+};
+
