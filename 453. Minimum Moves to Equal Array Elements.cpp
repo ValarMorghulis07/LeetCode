@@ -49,3 +49,28 @@ public:
       return ans;
     }
 };
+
+// 945. Minimum Increment to Make Array Unique
+
+/*
+Given an array of integers A, a move consists of choosing any A[i], and incrementing it by 1.
+Return the least number of moves to make every value in A unique.
+*/
+
+class Solution {
+public:
+    int minIncrementForUnique(vector<int>& A)
+    {
+      int n=A.size();
+      if(n==1)
+          return 0;
+      sort(A.begin(),A.end());
+      int next=0,ans=0;
+      for(int i=0;i<n;i++)
+      {
+       ans+=max(0,next-A[i]); // 0 b'coz if A[i] is greater than next and array is already sorted,then no need to worry
+       next=max(next,A[i])+1; // which next element should be
+      }
+      return ans;
+    }
+};
