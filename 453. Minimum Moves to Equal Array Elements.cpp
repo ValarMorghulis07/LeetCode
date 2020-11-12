@@ -5,6 +5,7 @@ where a move is incrementing n - 1 elements by 1.
 */
 
 // solution-->Rather than incrementing n-1 elements ,we decrement the selected by 1
+
 class Solution {
 public:
     int minMoves(vector<int>& nums) 
