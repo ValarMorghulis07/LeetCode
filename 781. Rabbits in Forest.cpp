@@ -16,7 +16,6 @@ For example [2,2,2] and [2,2] has the same result (i.e) 3 but [2,2,2,2] should b
 */
 
 
-
 class Solution {
 public:
     int numRabbits(vector<int>& answers) 
@@ -31,7 +30,14 @@ public:
          mp[answers[i]]++;
      int ans=0;
      for(auto xx:mp)
-         ans+=((xx.second+xx.first)/(xx.first+1))*(xx.first+1); // *(xx.first+1) is for like [2,2,2] will be 3 ,[3,3,3,3]=4 and so on.
+     {
+      ans+=(xx.second/(xx.first+1))*(xx.first+1);  // *(xx.first+1) is for like [2,2,2] will be 3 ,[3,3,3,3]=4 and so on.
+
+      if(xx.second%(xx.first+1)!=0)
+          ans+=(xx.first+1);
+     }
+       
      return ans;
    }
 };
+
