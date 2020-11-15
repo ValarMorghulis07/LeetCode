@@ -31,7 +31,7 @@ public:
          mp[answers[i]]++;
      int ans=0;
      for(auto xx:mp)
-         ans+=((xx.second+xx.first)/(xx.first+1))*(xx.first+1);
+         ans+=((xx.second+xx.first)/(xx.first+1))*(xx.first+1); // *(xx.first+1) is for like [2,2,2] will be 3 ,[3,3,3,3]=4 and so on.
      return ans;
    }
 };
