@@ -75,9 +75,7 @@ class Solution {
         i++;
       }
       ans+=j-i+1;
-     
      }
-    
       return ans;
     }
     
