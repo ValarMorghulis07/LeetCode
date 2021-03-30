@@ -55,6 +55,38 @@ public:
     }
 };
 
+// 992. Subarrays with K Different Integers
+
+class Solution {
+ public:
+    int doit(vector<int>& A,int k) // No.of subarrays with atmost k distinct elements
+    {
+     int n=A.size();
+     int ans=0,i=0;
+     unordered_map<int,int>mp;
+     for(int j=0;j<n;j++)
+     {
+      if(!mp[A[j]]++)
+          k--;
+      while(k<0)
+      {
+       if(!--mp[A[i]])
+          k++;
+        i++;
+      }
+      ans+=j-i+1;
+     
+     }
+    
+      return ans;
+    }
+    
+    int subarraysWithKDistinct(vector<int>& A, int K) 
+    {
+     return doit(A,K)-doit(A,K-1);   
+    }
+};
+
 // 395. Longest Substring with At Least K Repeating Characters
 
 // Find the length of the longest substring T of a given string (consists of lowercase letters only) such that every character in T appears no less than k times.
