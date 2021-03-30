@@ -91,7 +91,7 @@ class Solution {
 
 class Solution {
 public:
-    int longestSubstring(string s, int k) 
+    int longestSubstring(string s, int k) // O(n^2)
     {
      int n=s.length();
      if(n==0 || k>n)
