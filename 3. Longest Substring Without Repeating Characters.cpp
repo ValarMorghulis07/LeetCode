@@ -114,6 +114,54 @@ public:
     }
 };
 
+// SLiding Window (2nd Method)
+
+class Solution {
+public:
+    int doit(string& s,int k,int totalUnique)
+    {
+     int start=0,i=0,currUnique=0,zz=0;
+     int cnt[26]={0};
+     int ans=0;
+     while(i<s.length())
+     {
+      if(!cnt[s[i]-'a'])currUnique++;
+      cnt[s[i]-'a']++;
+      if(cnt[s[i]-'a']==k)zz++;
+      i++;
+      while(currUnique>totalUnique)
+      {
+       if(cnt[s[start]-'a']==k)
+           zz--;
+       cnt[s[start]-'a']--;
+       if(!cnt[s[start]-'a'])
+           currUnique--;
+       start++;
+       
+      }
+      if(currUnique==zz)
+          ans=max(ans,i-start);
+        
+     }
+     return ans;
+    }
+    int longestSubstring(string s, int k) 
+    {
+     int n=s.length();
+     if(n==0)
+         return 0;
+     if(k==1)
+         return n;
+     int ans=0;
+     for(int i=1;i<=26;i++)
+         ans=max(ans,doit(s,k,i)); // this tells longest substring with exactly i diiferent characters occuring k times or more
+     return ans;
+         
+     
+    
+    }
+};
+
 /*
 
 Sliding Window:-
