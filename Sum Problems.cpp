@@ -84,7 +84,7 @@ public:
       vector<vector<int>>vv;
       for(int i=0;i<n-2;i++)
       {
-        if(i>0 && nums[i]==nums[i-1])
+        if(i>0 && nums[i]==nums[i-1]) // [-4,-1,-1,0,1,2]
             continue;
         int tar=-nums[i];
         int l=i+1,r=n-1;
