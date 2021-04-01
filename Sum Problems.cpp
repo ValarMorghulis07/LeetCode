@@ -46,7 +46,7 @@ vector<vector<int>> threeSum(vector<int>& nums)
      sort(nums.begin(),nums.end());
      vector<int>vv;
      set<vector<int>>ss;
-     for(int i=0;i<n-1;i++)
+     for(int i=0;i<n-2;i++)
      {
       int l=i+1;
       int r=n-1;
