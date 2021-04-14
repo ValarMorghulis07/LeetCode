@@ -26,7 +26,7 @@ public:
       deque<int>dq;//O(n)
       for(int i=0;i<k;i++)
       {
-       while(!dq.empty() && nums[i]>=nums[dq.back()])//Remove all smaller elements
+       while(!dq.empty() && nums[i]>=nums[dq.back()])// For every element, the previous smaller elements are useless so remove them from dq
            dq.pop_back();
        dq.push_back(i);
       }
