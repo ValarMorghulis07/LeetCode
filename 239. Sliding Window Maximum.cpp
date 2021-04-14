@@ -23,7 +23,7 @@ public:
       }
       ans.push_back(p.top());
      }*/
-      deque<int>dq;//O(n)
+      deque<int>dq;//O(n) [5,3,3,1,2,3]
       for(int i=0;i<k;i++)
       {
        while(!dq.empty() && nums[i]>=nums[dq.back()])// For every element, the previous smaller elements are useless so remove them from dq
