@@ -25,3 +25,12 @@ public:
      return ans;
     }
 };
+
+/*
+The key is to find out how many idles do we need.
+Let's first look at how to arrange them. it's not hard to figure out that we can do a "greedy arrangement": always arrange task with most frequency first.
+E.g. we have following tasks : 3 A, 2 B, 1 C. and we have n = 2. According to what we have above, we should first arrange A, and then B and C. Imagine there are "slots" and we need to arrange tasks by putting them into "slots". Then A should be put into slot 0, 3, 6 since we need to have at least n = 2 other tasks between two A. After A put into slots, it looks like this:
+
+A ? ? A ? ? A
+"?" is "empty" slots.
+*/
