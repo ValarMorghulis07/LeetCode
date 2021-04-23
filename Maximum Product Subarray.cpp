@@ -89,3 +89,28 @@ public:
     }
 };
 
+// 2nd Method --> // O(1) space
+
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) 
+    {
+        
+     
+     int n=nums.size();
+     if(n==0)return {};
+     vector<int>vv(n);
+     vv[0]=1;
+     for(int i=1;i<n;i++)
+         vv[i]=vv[i-1]*nums[i-1];
+     int right=1;
+     for(int i=n-1;i>=0;i--)
+     {
+      vv[i]*=right;
+      right*=nums[i];
+     }
+     return vv;
+     
+    }
+};
+
