@@ -155,6 +155,42 @@ public:
     }
 };
 
+// 16. 3Sum Closest
+/*
+Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target.
+Return the sum of the three integers. You may assume that each input would have exactly one solution.
+*/
+
+class Solution {
+public:
+    int threeSumClosest(vector<int>& nums, int target) 
+    {
+     int n=nums.size();
+     sort(nums.begin(),nums.end());
+     int pp=INT_MAX,ans;
+     for(int i=0;i<n-2;i++)
+     {
+      int lo=i+1,hi=n-1;
+      while(lo<hi)
+      {
+       int zz=nums[i]+nums[lo]+nums[hi];
+       if(abs(target-zz)<abs(pp))
+           pp=abs(target-zz),ans=zz;
+       if(zz<target)
+           lo++;
+       else
+           hi--;
+       //cout<<ans;
+      }
+         
+     }
+     return ans;
+     
+    }
+};
+
+
+
 // 454. 4Sum II
 
 // Given four lists A, B, C, D of integer values, compute how many tuples (i, j, k, l) there are such that A[i] + B[j] + C[k] + D[l] is zero.
