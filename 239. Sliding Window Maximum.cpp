@@ -87,3 +87,42 @@ public:
          return s.substr(index,minlen);
     }
 };
+
+// 1838. Frequency of the Most Frequent Element
+
+class Solution {
+public:
+    int maxFrequency(vector<int>& nums, int k) 
+    {
+     int n=nums.size();
+     sort(nums.begin(),nums.end());
+     int ans=0,i=0;
+     long sum=0;
+     for(int j=0;j<n;j++)
+     {
+      sum+=nums[j];
+      while(k+sum<(long)(nums[j])*(j-i+1)) // it is same as (long)(nums[j])*(j-i+1)-sum>k
+      {
+       sum-=nums[i];
+       i++;
+      }
+      ans=max(ans,j-i+1);
+     }
+     return ans;
+    }
+};
+
+/* Leetcode--> Sliding Window
+Frequency of the Most Frequent Element
+Longest Subarray of 1's After Deleting One Element
+Constrained Subsequence Sum
+Number of Substrings Containing All Three Characters
+Count Number of Nice Subarrays
+Replace the Substring for Balanced String
+Max Consecutive Ones III
+Binary Subarrays With Sum
+Subarrays with K Different Integers
+Fruit Into Baskets
+Shortest Subarray with Sum at Least K
+Minimum Size Subarray Sum
+*
