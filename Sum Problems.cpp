@@ -289,121 +289,40 @@ public:
      
 };
 
-// Count pairs with given sum(gfg)
+// 1524. Number of Sub-arrays With Odd Sum
 
-#include <bits/stdc++.h>
-#define mem(dp,a) memset(dp,a,sizeof(dp))
-#define pb(x) push_back(x)
-#define m_p(x,y) make_pair(x,y)
-#define rep(i,a,b) for(ll i=a;i<b;i++)
-#define repush_back(i,a,b) for(ll i=a;i>=b;i--)
-#define f(n) for(ll i=0;i<n;i++)
-#define r(n) for(ll j=0;j<n;j++)
-#define F first
-#define S second
-#define pi 3.14159265359
-#define hs ios_base::sync_with_stdio(false);cin.tie(NULL);
-using namespace std;
-typedef long long int ll;
-ll HRX=1e18;
-ll INF=1e9+7;
-
-int main()
-{
- hs;
- ll t;
- cin>>t;
- f(t)
- {
-  ll n,k;
-  cin>>n>>k;
-  ll a[n];
-  map<ll,ll>mp;
-  f(n)
-  {
-    cin>>a[i];
-    mp[a[i]]++;
-  }
-  ll cnt=0;
-  f(n)
-  {
-   cnt+=mp[k-a[i]];
-   if(k-a[i]==a[i])
-     cnt--;
-  }
-  cout<<cnt/2<<endl;
- }
- return 0;
-}
-
-// Find all pairs with a given sum
-
-// Given two unsorted arrays A of size N and B of size M of distinct elements, the task is to find all pairs from both arrays whose sum is equal to X.
-
-#include <bits/stdc++.h>
-#define mem(dp,a) memset(dp,a,sizeof(dp))
-#define pb(x) push_back(x)
-#define m_p(x,y) make_pair(x,y)
-#define rep(i,a,b) for(ll i=a;i<b;i++)
-#define repush_back(i,a,b) for(ll i=a;i>=b;i--)
-#define f(n) for(ll i=0;i<n;i++)
-#define r(n) for(ll j=0;j<n;j++)
-#define F first
-#define S second
-#define pi 3.14159265359
-#define hs ios_base::sync_with_stdio(false);cin.tie(NULL);
-using namespace std;
-typedef long long int ll;
-ll HRX=1e18;
-ll INF=1e9+7;
-
-int main()
-{
- hs;
- ll t;
- cin>>t;
- f(t)
- {
-  ll n1,n2,k;
-  cin>>n1>>n2>>k;
-  ll a[n1],b[n2];
-  map<ll,ll>mp;
-  f(n1)
-  {
-   cin>>a[i];
-  }
-  f(n2)
-  {
-    cin>>b[i];
-    mp[b[i]]++;
-  }
-  ll ff=0;
-  vector<pair<ll,ll>>vec;
-  f(n1)
-  {
-   if(mp[k-a[i]]>0)
-   {
-    ff=1;
-    vec.pb(m_p(a[i],k-a[i]));
-   }
-  }
-  sort(vec.begin(),vec.end());
- if(ff==1)
- {
-    ll zz=vec.size();
-    f(zz)
+class Solution {
+public:
+    int numOfSubarrays(vector<int>& arr) 
     {
-    cout<<vec[i].first<<" "<<vec[i].second;
-    if(i!=zz-1)
-      cout<<","<<" ";
+     int n=arr.size();
+     int ans=0,cur=0;
+     int cnt[]={1,0};
+     int fcb=1e9+7;
+     for(int i=0;i<n;i++)
+     {
+      cur^=(arr[i] & 1); //prefix sum till now is odd/even
+      ans+=cnt[1-cur];   
+      ans%=fcb;
+      cnt[cur]++;
+     }
+     return ans;
+     
     }
- }
-  if(ff==0)
-    cout<<"-1";
-  cout<<"\n";
- }
- return 0;
-}
+};
+
+/*
+cur = 0 if current prefix sum is even
+cur = 1 if current prefix sum is odd
+count[0] is the number of even prefix sum
+count[1] is the number of odd prefix sum
+
+For each element in A:
+if current prefix sum is even, ans += the number of odd prefix sum(e+o=o)
+if current prefix sum is odd, ans += the number of even prefix sum(o+e=e)
+*/
+
+
 
 // Largest subarray with 0 sum
 
