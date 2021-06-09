@@ -112,6 +112,28 @@ public:
     }
 };
 
+// 1696. Jump Game VI
+
+class Solution {
+public:
+	 int maxResult(vector<int>& nums, int k) 
+     {
+       int n=nums.size();
+       int ans=nums[0];
+       priority_queue<pair<int,int>>pq; //MaxHeap
+       pq.push({nums[0],0});
+       for(int i=1;i<n;i++)
+       {
+        while(pq.top().second<i-k)
+            pq.pop(); // if not in [i-k,i] range then pop
+        ans=nums[i]+pq.top().first;
+        pq.push({ans,i});
+       }
+       return ans;
+      
+     }
+ };
+
 /* Leetcode--> Sliding Window
 Frequency of the Most Frequent Element
 Longest Subarray of 1's After Deleting One Element
