@@ -147,4 +147,5 @@ Subarrays with K Different Integers
 Fruit Into Baskets
 Shortest Subarray with Sum at Least K
 Minimum Size Subarray Sum
+1888. Minimum Number of Flips to Make the Binary String Alternating
 *
