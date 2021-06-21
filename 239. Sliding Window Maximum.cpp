@@ -5,7 +5,7 @@ public:
     vector<int> maxSlidingWindow(vector<int>& nums, int k)
     {
      vector<int>ans;
-     int n=nums.size(); //[5,3,3,1,2,3]
+     int n=nums.size(); //[5,3,3,1,2,3] && k=3
      if(n==0)
          return ans;
     /* priority_queue<int>p,q; //O(n*log(n))
