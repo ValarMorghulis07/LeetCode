@@ -45,3 +45,5 @@ public:
     
     }
 };
+
+// the major difference b/w both above question is that in trapping rain water b/w two container there is no space while in other have. 
