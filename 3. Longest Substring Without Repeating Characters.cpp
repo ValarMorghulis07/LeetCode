@@ -85,7 +85,7 @@ class Solution {
     }
 };
 
-// 395. Longest Substring with At Least K Repeating Characters
+// 395. Longest Substring with At Least K Repeating Characters [i.e--> s = "ababbc", k = 2]
 
 // Find the length of the longest substring T of a given string (consists of lowercase letters only) such that every character in T appears no less than k times.
 
