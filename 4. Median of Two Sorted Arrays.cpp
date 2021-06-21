@@ -99,7 +99,7 @@ public:
         
     }
     
-    void addNum(int num)
+    void addNum(int num) // [-i.e--> 5, 15, 1 ,3]
     {
       if(maxx.empty() || maxx.top()>num)
           maxx.push(num);
@@ -130,4 +130,6 @@ public:
          return minn.top();
     }
 };
+
+// we put larger number in minn heap and smaller number in maxx heap
 
