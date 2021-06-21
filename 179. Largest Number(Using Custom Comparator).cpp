@@ -6,7 +6,7 @@ public:
      return (s1+s2>s2+s1);//  {return s1+s2<s2+s1;});If smallest && change code below accordingly
    }
    
-    string largestNumber(vector<int>& nums) 
+    string largestNumber(vector<int>& nums)  // [2,10]
     {
      int n=nums.size();
      vector<string>vv;
