@@ -319,7 +319,7 @@ count[1] is the number of odd prefix sum
 
 For each element in A:
 if current prefix sum is even, ans += the number of odd prefix sum(e+o=o)
-if current prefix sum is odd, ans += the number of even prefix sum(o+e=e)
+if current prefix sum is odd, ans += the number of even prefix sum(o+e=o)
 */
 
 
