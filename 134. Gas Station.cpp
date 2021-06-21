@@ -30,18 +30,29 @@ public:
         return -1;
       */
       // O(n)
-      int start=0,total=0,cur=0;
-      for(int i=0;i<n;i++)
-      {
-       if((cur+=gas[i]-cost[i])<0) // if not able to reach next station
-       {
-        total+=cur;
-        cur=0;
-        start=i+1; // next station may be start
         
-       }
+     class Solution {
+public:
+    int canCompleteCircuit(vector<int>& gas, vector<int>& cost)
+    {
+     int n=gas.size();
+     int cur=0,total=0,start=0;
+     for(int i=0;i<n;i++)
+     {
+      cur+=(gas[i]-cost[i]);
+      if(cur<0) // if not able to reach next station
+      {
+       total+=cur;
+       cur=0;
+       start=i+1; // next station may be start
       }
-      return (total+cur>=0) ? start : -1;
-     
+     }
+     if(total+cur>=0)
+         return start;
+     return -1;
     }
 };
+
+
+
+
