@@ -116,7 +116,7 @@ public:
 
 class Solution {
 public:
-	 int maxResult(vector<int>& nums, int k) 
+     int maxResult(vector<int>& nums, int k) 
      {
        int n=nums.size();
        int ans=nums[0];
