@@ -126,7 +126,7 @@ public:
        {
         while(pq.top().second<i-k)
             pq.pop(); // if not in [i-k,i] range then pop
-        ans=nums[i]+pq.top().first;
+        ans=nums[i]+pq.top().first; // just focus max val we can get from numbers in [i-k,i]
         pq.push({ans,i});
        }
        return ans;
