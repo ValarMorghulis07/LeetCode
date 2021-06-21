@@ -1,7 +1,6 @@
 class LRUCache {
 public:
     int sz;
-    
     list<int>recent;
     unordered_map<int,int>mp;
     unordered_map<int,list<int>::iterator>pos;
