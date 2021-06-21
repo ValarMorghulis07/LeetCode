@@ -59,7 +59,7 @@ Return the least number of moves to make every value in A unique.
 
 class Solution {
 public:
-    int minIncrementForUnique(vector<int>& A)
+    int minIncrementForUnique(vector<int>& A) // [1,1,2]
     {
       int n=A.size();
       if(n==1)
